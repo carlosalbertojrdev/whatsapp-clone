@@ -1,0 +1,13 @@
+spring:
+    datasource:
+      url: jdbc:mysql://localhost:3306/ms_users
+      username: root
+      password: ms_users
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQLDialect
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+    

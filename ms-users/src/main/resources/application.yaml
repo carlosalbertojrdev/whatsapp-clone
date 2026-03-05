@@ -1,0 +1,13 @@
+spring:
+    profiles:
+      active: ${ENV:local}
+    application:
+        name: ms-users
+    datasource:
+      url: ${DATABASE_URL}
+      username: ${DATABASE_USER}
+      password: ${DATABASE_PASSWORD}
+    jpa:
+        hibernate:
+            ddl-auto: none
+        show-sql: false
