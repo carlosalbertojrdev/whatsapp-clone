@@ -18,7 +18,6 @@ public class GetUserByIdUseCase implements UseCase<GetUserByIdInput, UserDomain>
 
     @Override
     public Optional<UserDomain> execute(GetUserByIdInput input) {
-        log.debug("Current thread name: {} - is virtual: {}", Thread.currentThread().getName(), Thread.currentThread().isVirtual());
         return userRepository.findById(input.userId());
     }
 }
