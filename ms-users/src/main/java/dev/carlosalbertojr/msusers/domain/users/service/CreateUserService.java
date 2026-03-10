@@ -7,16 +7,14 @@ import dev.carlosalbertojr.msusers.domain.shared.DomainService;
 import dev.carlosalbertojr.msusers.domain.users.entity.UserDomain;
 import dev.carlosalbertojr.msusers.domain.users.repository.UserRepository;
 import dev.carlosalbertojr.msusers.domain.users.service.dto.CreateUserInput;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@RequiredArgsConstructor
 public class CreateUserService implements DomainService<CreateUserInput, UserDomain> {
     
     private final UserRepository userRepository;
-
-    public CreateUserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public Optional<UserDomain> execute(CreateUserInput input) {

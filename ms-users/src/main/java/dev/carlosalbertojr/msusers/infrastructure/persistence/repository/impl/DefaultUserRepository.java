@@ -20,5 +20,10 @@ public class DefaultUserRepository implements UserRepository {
         final var saved = userJpaRepository.save(UserMapper.mapToEntity(user));
         return Optional.of(UserMapper.mapToDomain(saved));
     }
-    
+
+    @Override
+    public Optional<UserDomain> findById(String id) {
+        return userJpaRepository.findById(id)
+                .map(UserMapper::mapToDomain);
+    }
 }

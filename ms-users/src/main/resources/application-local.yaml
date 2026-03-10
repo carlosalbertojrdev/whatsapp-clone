@@ -1,4 +1,7 @@
 spring:
+    threads:
+      virtual:
+        enabled: true
     datasource:
       url: jdbc:mysql://localhost:3306/ms_users
       username: root
@@ -10,4 +13,12 @@ spring:
         hibernate:
             ddl-auto: update
         show-sql: true
-    
+logging:
+  file:
+    name: logs/app.log
+    path: logs
+  level:
+    root: INFO
+    dev.carlosalbertojr: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

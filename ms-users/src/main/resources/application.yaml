@@ -1,4 +1,7 @@
 spring:
+    threads:
+      virtual:
+        enabled: true
     profiles:
       active: ${ENV:local}
     application:
@@ -11,3 +14,12 @@ spring:
         hibernate:
             ddl-auto: none
         show-sql: false
+logging:
+  file:
+    name: logs/app.log
+    path: logs
+  level:
+    root: INFO
+    dev.carlosalbertojr: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

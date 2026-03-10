@@ -7,5 +7,7 @@ import dev.carlosalbertojr.msusers.domain.users.entity.UserDomain;
 public interface UserRepository {
 
     Optional<UserDomain> save(UserDomain user);
+
+    Optional<UserDomain> findById(String id);
     
 }

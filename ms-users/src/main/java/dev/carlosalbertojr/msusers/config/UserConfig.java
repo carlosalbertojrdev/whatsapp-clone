@@ -1,5 +1,7 @@
 package dev.carlosalbertojr.msusers.config;
 
+import dev.carlosalbertojr.msusers.domain.users.service.GetUserByIdService;
+import dev.carlosalbertojr.msusers.domain.users.service.dto.GetUserByIdInput;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,8 +24,15 @@ public class UserConfig {
     }
 
     @Bean
+    DomainService<GetUserByIdInput, UserDomain> getUserByIdService(
+            UserRepository userRepository
+    ) {
+        return new GetUserByIdService(userRepository);
+    }
+
+    @Bean
     UserRepository userRepository(UserJpaRepository userJpaRepository) {
         return new DefaultUserRepository(userJpaRepository);
     }
-    
+
 }
