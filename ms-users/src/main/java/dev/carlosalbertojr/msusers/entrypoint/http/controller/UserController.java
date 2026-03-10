@@ -1,15 +1,15 @@
 package dev.carlosalbertojr.msusers.entrypoint.http.controller;
 
-import dev.carlosalbertojr.msusers.domain.users.service.dto.GetUserByIdInput;
+import dev.carlosalbertojr.msusers.domain.users.usecase.dto.GetUserByIdInput;
 import dev.carlosalbertojr.msusers.entrypoint.http.exception.ResourceNotFoundException;
 import dev.carlosalbertojr.msusers.entrypoint.http.payload.GetUserByIdResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import dev.carlosalbertojr.msusers.domain.shared.DomainService;
+import dev.carlosalbertojr.msusers.domain.shared.UseCase;
 import dev.carlosalbertojr.msusers.domain.users.entity.UserDomain;
-import dev.carlosalbertojr.msusers.domain.users.service.dto.CreateUserInput;
+import dev.carlosalbertojr.msusers.domain.users.usecase.dto.CreateUserInput;
 import dev.carlosalbertojr.msusers.entrypoint.http.payload.CreateUserRequest;
 import jakarta.validation.Valid;
 
@@ -18,8 +18,8 @@ import jakarta.validation.Valid;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final DomainService<CreateUserInput, UserDomain> createUserService;
-    private final DomainService<GetUserByIdInput, UserDomain> getUserByIdService;
+    private final UseCase<CreateUserInput, UserDomain> createUserService;
+    private final UseCase<GetUserByIdInput, UserDomain> getUserByIdService;
 
 
     @PostMapping

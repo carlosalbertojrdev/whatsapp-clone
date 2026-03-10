@@ -1,9 +1,9 @@
-package dev.carlosalbertojr.msusers.domain.users.service;
+package dev.carlosalbertojr.msusers.domain.users.usecase;
 
-import dev.carlosalbertojr.msusers.domain.shared.DomainService;
+import dev.carlosalbertojr.msusers.domain.shared.UseCase;
 import dev.carlosalbertojr.msusers.domain.users.entity.UserDomain;
 import dev.carlosalbertojr.msusers.domain.users.repository.UserRepository;
-import dev.carlosalbertojr.msusers.domain.users.service.dto.GetUserByIdInput;
+import dev.carlosalbertojr.msusers.domain.users.usecase.dto.GetUserByIdInput;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Slf4j
 @RequiredArgsConstructor
-public class GetUserByIdService implements DomainService<GetUserByIdInput, UserDomain> {
+public class GetUserByIdUseCase implements UseCase<GetUserByIdInput, UserDomain> {
 
     private final UserRepository userRepository;
 
