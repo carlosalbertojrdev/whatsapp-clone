@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ms-chats
+  data:
+    mongodb:
+      url: ${MS_CHATS_DATABASE_URL}

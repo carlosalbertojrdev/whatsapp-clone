@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ms-chats
+  profiles:
+    active: ${ENV:local}
+  data:
+    mongodb:
+      url: mongodb://localhost:27017/ms_chats
